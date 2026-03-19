@@ -1,26 +1,39 @@
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Programs from './components/Programs';
+import Process from './components/Process';
+import MBBSDetails from './pages/MBBSDetails';
+import FloatingActions from './components/FloatingActions';
+import Footer from './components/Footer';
 
-function App() {
+
+function Home() {
   return (
-    <HelmetProvider>
-      <div className="min-h-screen">
-        <Helmet>
-          <title>Aimbridge Education | Premier Educational Consultancy</title>
-          <meta name="description" content="Leading education consultancy for international students." />
-        </Helmet>
-        
-        <Navbar />
-        <main>
-          <Hero />
-          {/* Add more sections here */}
-          <section id="about" className="h-96 bg-accent flex items-center justify-center text-3xl">About Section</section>
-          <section id="programs" className="h-96 flex items-center justify-center text-3xl">Programs Section</section>
-        </main>
-      </div>
-    </HelmetProvider>
+    <>
+      <Hero />
+      <Programs />
+      <Process />
+     
+      <Footer />
+      <FloatingActions />
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mbbs-details" element={<MBBSDetails />} />
+          </Routes>
+        </div>
+      </Router>
+    </HelmetProvider>
+  );
+}
