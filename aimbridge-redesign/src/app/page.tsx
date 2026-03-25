@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm'; // Import the form
 import { CheckCircle, Globe, GraduationCap, Plane } from 'lucide-react';
 
 export default function Home() {
@@ -54,6 +55,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+{/* Contact Section */}
+      <section id="contact" className="py-24 px-4 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Side: Text & Info */}
+            <div>
+              <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+                Get In Touch
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                Ready to Start Your <br />
+                <span className="text-blue-600">Global Journey?</span>
+              </h3>
+              <p className="text-gray-600 text-lg mb-10 leading-relaxed">
+                Have questions about MBBS abroad, Nursing, or Pilot Training? 
+                Our expert counsellors are ready to provide you with a free, 
+                one-on-one consultation. [cite: 38, 66]
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white shadow-md rounded-2xl flex items-center justify-center text-blue-600">
+                    <Globe size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Main Office</p>
+                    <p className="text-gray-900 font-bold text-lg">Calicut, Kerala, India [cite: 78]</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white shadow-md rounded-2xl flex items-center justify-center text-green-500">
+                    <CheckCircle size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Support Policy</p>
+                    <p className="text-gray-900 font-bold text-lg">Student-Centric Guidance [cite: 71]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side: The Form Component */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-[40px] blur-2xl opacity-10"></div>
+              <div className="relative">
+                <ContactForm />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
       <Footer />
     </main>
